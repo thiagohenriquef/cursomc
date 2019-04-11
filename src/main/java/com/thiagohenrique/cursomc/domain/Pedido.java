@@ -16,7 +16,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Pedido implements Serializable {
@@ -49,6 +48,14 @@ public class Pedido implements Serializable {
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
+	}
+	
+	public double getValorTotal() {
+		double sum = 0.0;
+		for (ItemPedido ip : itens) {
+			sum = sum + ip.getSubTotal();
+		}
+		return sum;
 	}
 
 	@Override
