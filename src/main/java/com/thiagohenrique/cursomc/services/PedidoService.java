@@ -11,7 +11,6 @@ import com.thiagohenrique.cursomc.domain.PagamentoComBoleto;
 import com.thiagohenrique.cursomc.domain.Pedido;
 import com.thiagohenrique.cursomc.domain.enums.EstadoPagamento;
 import com.thiagohenrique.cursomc.repositories.ItemPedidoRepository;
-import com.thiagohenrique.cursomc.repositories.PagamentoRepository;
 import com.thiagohenrique.cursomc.repositories.PedidoRepository;
 import com.thiagohenrique.cursomc.services.exception.ObjectNotFoundException;
 
@@ -22,9 +21,6 @@ public class PedidoService {
 
 	@Autowired
 	private BoletoService boletoService;
-	
-	@Autowired
-	private PagamentoRepository pagamentoRepository;
 	
 	@Autowired
 	private ProdutoService produtoService;
